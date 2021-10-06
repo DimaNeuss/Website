@@ -77,6 +77,8 @@ const formEl = document.querySelector("#project_form");
 const emailModal = document.querySelector("#modal_email");
 const successModal = document.querySelector("#modal_success");
 
+calculateWork();
+
 formEl.addEventListener("change", calculateWork);
 
 formEl.addEventListener("submit", function (event) {
@@ -88,6 +90,11 @@ const closebuttons = document.querySelectorAll(".btn_close");
 
 closebuttons.forEach(function (closeBtn) {
     closeBtn.addEventListener("click", function () {
+
+        const inputConainer = document.querySelector("#container_email-input");
+
+        inputConainer.classList.remove("container_email-input-error");
+
         emailModal.classList.remove("modal_active");
         successModal.classList.remove("modal_active");
     });
@@ -97,15 +104,27 @@ const modalEmailContainer = document.querySelector("#modal_email-container");
 modalEmailContainer.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const userEmalInput = document.querySelector("#user_emal")
+    const userEmalInput = document.querySelector("#user_emal");
     
     if (userEmalInput.value) {
-        
-        emailModal.classList.remove("modal_active"); 
-        successModal.classList.add("modal_active");
-        
 
-    }
+        let formData = new FormData(formEl);
+
+        formData.append('Email', userEmalInput.value);
+
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+            .then(function () {            
+                emailModal.classList.remove("modal_active"); 
+                successModal.classList.add("modal_active");
+            })
+            .catch((error) => alert(error))
+        
+        return;
+        }
 
     const inputConainer = document.querySelector("#container_email-input");
 

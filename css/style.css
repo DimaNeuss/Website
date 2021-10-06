@@ -56,9 +56,12 @@ a {
   color: #eb5757;
   text-decoration: underline;
 }
+.my_projects_link:hover {
+  color: #ffb800;
+}
 .icon {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 .icon_linkedin,
 .icon_nodejs,
@@ -214,6 +217,10 @@ a {
   border: none;
   cursor: pointer;
   width: 200px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #0732cd;
 }
 /*modal*/
 .modal_bgd {

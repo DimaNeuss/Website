@@ -42,9 +42,9 @@
             </div>
         
             <div class="technologies">
-                <img src="./img/mdi_language-javascript.svg" alt="Иконка javascript">
-                <img src="./img/mdi_react.svg" alt="Иконка react" class="icon_react">
-                <img src="./img/mdi_nodejs.svg" alt="Иконка nodejs" class="icon_nodejs">
+                <img src="./img/mdi_language-javascript.svg" alt="Иконка javascript" class="icon">
+                <img src="./img/mdi_react.svg" alt="Иконка react" class="icon icon_react">
+                <img src="./img/mdi_nodejs.svg" alt="Иконка nodejs" class="icon icon_nodejs">
             </div>
             <a class="my_projects_link" href="https://github.com/DimaNeuss">meine Arbeit</a>
         </section>
@@ -71,13 +71,14 @@
                 </ul>      
             </div>        
         </section>
-        <section class="container_cal">            
+        <section class="container_cal">                        
             <div class="calculator">
+
                 <form action="#" class="calculator_form" method="POST" name="contact" data-netlify="true" id="project_form">
                     <h4 class="calculator_title">berechnen Sie die Kosten für das Projekt</h4>
                     <div class="container_project">
                         <label for="project_type" class="form_title">site-Typ</label>
-                        <select name="project_type" id="project_type" class="project_type_select">
+                        <select name="Project Type" id="project_type" class="project_type_select">
                             <option value="landing-page">Landing page</option>
                             <option value="online-store">Online-Store</option>
                             <option selected value="web-application">Web-Application</option>
@@ -86,19 +87,19 @@
                         <div class="container_activity">
                             <p class="form_title">Work-Typ</p> 
                             <div class="activity_item">
-                                <input type="checkbox" name="project-management" id="project-management" class="activity_checkbox">
+                                <input type="checkbox" name="Project Management" id="project-management" class="activity_checkbox">
                                 <label for="project-management" class="activity_title">Project Management</label>
                             </div>
                             <div class="activity_item">
-                                <input type="checkbox" name="design" id="design" class="activity_checkbox">
+                                <input type="checkbox" name="Design" id="design" class="activity_checkbox">
                                 <label for="design" class="activity_title">Design</label>
                             </div>
                             <div class="activity_item">
-                                <input type="checkbox" name="developer" id="developer" class="activity_checkbox" checked>
+                                <input type="checkbox" name="Developer" id="developer" class="activity_checkbox" checked>
                                 <label for="developer" class="activity_title">Developer</label>
                             </div>
                             <div class="activity_item">
-                                <input type="checkbox" name="qa" id="qa" class="activity_checkbox">
+                                <input type="checkbox" name="QA" id="qa" class="activity_checkbox">
                                 <label for="qa" class="activity_title">QA</label>
                             </div>                     
                         </div>
@@ -106,6 +107,9 @@
                             <p class="form_title">Price</p>
                             <p class="price"> <span class="price_item">$</span><span id="total_price">0</span></p>
                         </div>
+
+                        <input type="hidden" name="Email">
+
                         <div class="container-price_btn">
                             <button class="btn">anfrage senden</button>
                         </div>
